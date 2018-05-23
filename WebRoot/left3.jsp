@@ -1,15 +1,13 @@
-
-<%@ page language="java"  pageEncoding="UTF-8"%>
+<%@ page language="java"  pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" import="java.sql.*" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ page language="java" import="java.sql.*" %>
 <jsp:useBean id="connDbBean" scope="page" class="db.db"/>
 <html>
   <head>
     <base href="<%=basePath%>">
-    
     <title>高校Mooc资源共享平台</title>
 <link href="images/css1/left_css.css" rel="stylesheet" type="text/css">
 

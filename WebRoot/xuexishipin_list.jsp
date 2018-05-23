@@ -38,6 +38,7 @@
     <td bgcolor='#CCFFFF'>课程</td><td bgcolor='#CCFFFF'>主讲人</td>
     <td bgcolor='#CCFFFF'>文件</td>
     <td width="138" align="center" bgcolor="CCFFFF">添加时间</td>
+    <td width="60" align="center" bgcolor="CCFFFF">审核状态</td>
     <td width="60" align="center" bgcolor="CCFFFF">操作</td>
   </tr>
 <%
@@ -76,6 +77,7 @@
  	String neirong="";
  	String wenjian="";
  	String addtime="";
+ 	String checkStatus="";
  	int i=0;
  	while(RS_result.next()){
  		i=i+1;
@@ -87,6 +89,7 @@
 		neirong=RS_result.getString("neirong");
 		wenjian=RS_result.getString("wenjian");
  		addtime=RS_result.getString("addtime");
+ 		checkStatus=RS_result.getString("checkStatus");
 %>
   <tr>
     <td width="30" align="center"><%=i %></td>
@@ -98,6 +101,20 @@
     	<a href='downloadServlet?id=<%=id%>' target='_blank'>下载</a>
     </td>
     <td width="138" align="center"><%=addtime %></td>
+    <td width="138" align="center">
+    <%
+      if (request.getSession().getAttribute("cx").equals("教师")){
+    %>
+    	<%=checkStatus%>
+    <%
+      }else{
+      if("未审核".equals(checkStatus)){
+    %>
+    	<a href="check.jsp?id=<%=id%>&value=已审核&columnName=checkStatus&tablename=xuexishipin"><%=checkStatus%></a>
+    <%}else{%>
+    	<a href="check.jsp?id=<%=id%>&value=未审核&columnName=checkStatus&tablename=xuexishipin"><%=checkStatus%></a>
+    <%}}%>
+    </td>
     <td width="90" align="center">
     	<a href="xuexishipin_updt.jsp?id=<%=id%>">修改</a>
     	<a href="del.jsp?id=<%=id %>&tablename=xuexishipin" onclick="return confirm('真的要删除？')">删除</a> 

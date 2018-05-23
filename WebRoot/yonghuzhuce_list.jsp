@@ -83,9 +83,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
   <tr>
     <td width="30" align="center"><%=i %></td>
-    <td><%=yonghuming %></td><td><%=mima %></td><td><%=xingming %></td><td><%=xingbie %></td><td><%=chushengnianyue %></td><td><%=QQ %></td><td><%=youxiang %></td><td><%=dianhua %></td><td><%=shenfenzheng %></td><td><a href='<%=touxiang %>' target='_blank'><img src='<%=touxiang %>' width=88 height=99 border=0 /></a></td><td><%=dizhi %></td><td><%=beizhu %></td>
+    <td><%=yonghuming %></td>
+    <td><%=mima %></td>
+    <td><%=xingming %></td>
+    <td><%=xingbie %></td>
+    <td><%=chushengnianyue %></td>
+    <td><%=QQ %></td>
+    <td><%=youxiang %></td>
+    <td><%=dianhua %></td>
+    <td><%=shenfenzheng %></td>
+    <td>
+    	<a href='<%=touxiang %>' target='_blank'>
+    	<img src='<%=touxiang %>' width=88 height=99 border=0 /></a>
+    </td>
+    <td><%=dizhi %></td><td><%=beizhu %></td>
     <td width="138" align="center"><%=addtime %></td>
-    <td width="90" align="center"><a href="sh.jsp?id=<%=id%>&yuan=<%=issh%>&tablename=yonghuzhuce" onClick="return confirm('确定要执行此操作？');"><%=issh%></a></td>
+    <td width="90" align="center">
+    	<a href="sh.jsp?id=<%=id%>&yuan=<%=issh%>&tablename=yonghuzhuce" onClick="return confirm('确定要执行此操作？');"><%=issh%></a>
+    </td>
     <td width="90" align="center"><a href="yonghuzhuce_updt.jsp?id=<%=id%>">修改</a>  <a href="del.jsp?id=<%=id %>&tablename=yonghuzhuce" onClick="return confirm('真的要删除？')">删除</a> <a href="yonghuzhuce_detail.jsp?id=<%=id%>" target="_blank"></a></td>
   </tr>
   	<%

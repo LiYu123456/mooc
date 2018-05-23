@@ -1,4 +1,4 @@
-<%@ page language="java"  pageEncoding="UTF-8" import="java.sql.*" %>
+<%@ page language="java"  pageEncoding="UTF-8" import="java.sql.*" contentType="text/html; charset=UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -15,16 +15,13 @@ response.setCharacterEncoding("UTF-8");
     <title>My JSP 'adminyanzheng.jsp' starting page</title>
   </head>
 <body>
-  <%
-String yuan=new String(request.getParameter("yuan").getBytes("8859_1"));
+<%
+String value=request.getParameter("value");
 String id=request.getParameter("id");
 String tablename=request.getParameter("tablename");
+String valueColumn=request.getParameter("columnName");
 String sql="";
-if(yuan.equals("是")){
-	sql="update "+tablename+" set issh='否' where id="+id;
-}else{
-	sql="update "+tablename+" set issh='是' where id="+id;
-}
+sql="update "+tablename+" set "+valueColumn+"='"+value+"' where id="+id;
 connDbBean.executeUpdate(sql);
 out.print("<script>alert('操作成功!!');location.href='"+request.getHeader("Referer")+"';</script>");
 %>

@@ -90,7 +90,7 @@ ResultSet RS_result;
 				int zys=0;
 				//用下面的方法（sql查询完成，速度快）
 				String hsgnpage=request.getParameter("page");
-				String fysql="select count(id) as ss from xuexishipin";
+				String fysql="select count(id) as ss from xuexishipin where checkStatus='已审核'";
 				ResultSet RS_resultfy=connDbBean.executeQuery(fysql);
   while(RS_resultfy.next()){
   zgs=Integer.parseInt(RS_resultfy.getString("ss"));
@@ -113,7 +113,7 @@ ResultSet RS_result;
 					curpage=zys;
 				}
    sql="";
-  sql="select * from xuexishipin where 1=1";
+  sql="select * from xuexishipin where 1=1  and checkStatus='已审核'";
   
 if(request.getParameter("bianhao")=="" ||request.getParameter("bianhao")==null ){}else{sql=sql+" and bianhao like '%"+new String(request.getParameter("bianhao").getBytes("8859_1"))+"%'";}
 if(request.getParameter("mingcheng")=="" ||request.getParameter("mingcheng")==null ){}else{sql=sql+" and mingcheng like '%"+new String(request.getParameter("mingcheng").getBytes("8859_1"))+"%'";}
