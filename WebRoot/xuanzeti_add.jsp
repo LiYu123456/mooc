@@ -36,6 +36,7 @@ function gow()
 </script>
   <body >
   <form name="form1" id="form1" method="post" action="xuanzeti_add_post.jsp">
+  <input type="hidden" name="questtype" value="choice"/>
   添加选择题:
   <br><br>
    <table width="100%" border="1" align="center" cellpadding="3" cellspacing="1" bordercolor="#00FFFF" style="border-collapse:collapse">    <tr><td>专业：</td><td><select name='zhuanye' id='zhuanye'><%String sql="select zhuanye from zhuanyexinxi order by id desc";ResultSet RS_result=connDbBean.executeQuery(sql);while(RS_result.next()){%><option value="<%= RS_result.getString("zhuanye")%>" ><%=RS_result.getString("zhuanye")%></option><%}%></select>&nbsp;*</td></tr><tr>

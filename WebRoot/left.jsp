@@ -327,11 +327,19 @@ border=0>
               <TBODY>
                 <TR>
                   <TD width="2%"><IMG src="images/closed.gif"></TD>
-                  <TD height=23><A href="xuanzeti_add.jsp" target=main>试题添加</A> </TD>
+                  <TD height=23><A href="xuanzeti_add.jsp" target=main>选择题添加</A> </TD>
+                </TR>
+                <TR>
+                  <TD width="2%"><IMG src="images/closed.gif"></TD>
+                  <TD height=23><A href="panduan_add.jsp" target=main>判断题添加</A> </TD>
                 </TR>
 				<TR>
                   <TD width="2%"><IMG src="images/closed.gif"></TD>
-                  <TD height=23><A href="xuanzeti_list.jsp" target=main>试题查询</A> </TD>
+                  <TD height=23><A href="xuanzeti_list.jsp" target=main>选择题查询</A> </TD>
+                </TR>
+                <TR>
+                  <TD width="2%"><IMG src="images/closed.gif"></TD>
+                  <TD height=23><A href="panduan_list.jsp" target=main>判断题查询</A> </TD>
                 </TR>
 				<TR>
                   <TD width="2%"><IMG src="images/closed.gif"></TD>

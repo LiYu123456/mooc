@@ -29,14 +29,18 @@ rel=stylesheet>
 <table width="100%" border="1" align="center" cellpadding="3" cellspacing="1" bordercolor="00FFFF" style="border-collapse:collapse">  
   <tr>
     <td width="30" align="center" bgcolor="CCFFFF">序号</td>
-    <td bgcolor='#CCFFFF'>专业</td><td bgcolor='#CCFFFF'>学科</td><td bgcolor='#CCFFFF'>题目</td><td bgcolor='#CCFFFF'>选项A</td><td bgcolor='#CCFFFF'>选项B</td><td bgcolor='#CCFFFF'>选项C</td><td bgcolor='#CCFFFF'>选项D</td><td bgcolor='#CCFFFF'>答案</td><td bgcolor='#CCFFFF'>难度系数</td>
+    <td bgcolor='#CCFFFF'>专业</td>
+    <td bgcolor='#CCFFFF'>学科</td>
+    <td bgcolor='#CCFFFF'>题目</td>
+    <td bgcolor='#CCFFFF'>答案</td>
+    <td bgcolor='#CCFFFF'>难度系数</td>
     <td width="138" align="center" bgcolor="CCFFFF">添加时间</td>
     
     <td width="60" align="center" bgcolor="CCFFFF">操作</td>
   </tr>
   <%
   String sql="";
-  sql="select * from xuanzeti where 1=1 and questionType='choice'";
+  sql="select * from xuanzeti where 1=1 and questionType='judge'";
   if(request.getParameter("bianhao")=="" ||request.getParameter("bianhao")==null )
   {}
   else
@@ -52,7 +56,9 @@ rel=stylesheet>
   sql=sql+" order by id desc";
  ResultSet RS_result=connDbBean.executeQuery(sql);
  String id="";
- String zhuanye="";String xueke="";String timu="";String xuanxiangA="";String xuanxiangB="";String xuanxiangC="";String xuanxiangD="";String daan="";String nanduxishu="";
+ String zhuanye="";String xueke="";
+ String timu="";String xuanxiangA="";String xuanxiangB="";
+ String xuanxiangC="";String xuanxiangD="";String daan="";String nanduxishu="";
  String addtime="";
  int i=0;
  
@@ -70,9 +76,15 @@ zhuanye=RS_result.getString("zhuanye");xueke=RS_result.getString("xueke");timu=R
 %>
   <tr>
     <td width="30" align="center"><%=i %></td>
-    <td><%=zhuanye %></td><td><%=xueke %></td><td><%=timu %></td><td><%=xuanxiangA %></td><td><%=xuanxiangB %></td><td><%=xuanxiangC %></td><td><%=xuanxiangD %></td><td><%=daan %></td><td><%=nanduxishu %></td>
+    <td><%=zhuanye %></td>
+    <td><%=xueke %></td>
+    <td><%=timu %></td>
+    <td><%="1".equals(daan)?"正确":"错误" %></td>
+    <td><%=nanduxishu %></td>
     <td width="138" align="center"><%=addtime %></td>
-    <td width="60" align="center"><a href="xuanzeti_updt.jsp?id=<%=id%>">修改</a>  <a href="del.jsp?id=<%=id %>&tablename=xuanzeti" onClick="return confirm('真的要删除？')">删除</a></td>
+    <td width="60" align="center">
+    	<a href="panduan_updt.jsp?id=<%=id%>">修改</a>
+    	<a href="del.jsp?id=<%=id %>&tablename=xuanzeti" onClick="return confirm('真的要删除？')">删除</a></td>
   </tr>
   	<%
   }

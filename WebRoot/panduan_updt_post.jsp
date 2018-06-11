@@ -17,20 +17,16 @@ response.setCharacterEncoding("UTF-8");
   </head>
   <body>
   <%
-String zhuanye=request.getParameter("zhuanye");
+  String zhuanye=request.getParameter("zhuanye");
+  String questtype=request.getParameter("questtype");
   String xueke=request.getParameter("xueke");
   String timu=request.getParameter("timu");
-  String questtype=request.getParameter("questtype");
-  String xuanxiangA=request.getParameter("xuanxiangA");
-  String xuanxiangB=request.getParameter("xuanxiangB");
-  String xuanxiangC=request.getParameter("xuanxiangC");
-  String xuanxiangD=request.getParameter("xuanxiangD");
   String daan=request.getParameter("daan");
   String nanduxishu=request.getParameter("nanduxishu");
 String id=request.getParameter("id");
-String sql="update xuanzeti set zhuanye='"+zhuanye+"',xueke='"+xueke+"',timu='"+timu+"',xuanxiangA='"+xuanxiangA+"',xuanxiangB='"+xuanxiangB+"',xuanxiangC='"+xuanxiangC+"',xuanxiangD='"+xuanxiangD+"',daan='"+daan+"',nanduxishu='"+nanduxishu+"' where id= "+id+" and questionType='"+questtype+"'";
+String sql="update xuanzeti set zhuanye='"+zhuanye+"',xueke='"+xueke+"',timu='"+timu+"',daan='"+daan+"',nanduxishu='"+nanduxishu+"' where id= "+id+" and questionType='"+questtype+"'";
 connDbBean.executeUpdate(sql);
-out.print("<script>alert('修改成功!!');location.href='xuanzeti_list.jsp';</script>");
+out.print("<script>alert('修改成功!!');location.href='panduan_list.jsp';</script>");
 %>
   </body>
 </html>

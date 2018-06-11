@@ -36,16 +36,32 @@ function check()
   <%
   String id=request.getParameter("id");
    %>
-  <form name="form1" id="form1" method="post" action="xuanzeti_updt_post.jsp?id=<%=id %>">
-  <input type="hidden" name="questtype" value="choice"/>
+  <form name="form1" id="form1" method="post" action="panduan_updt_post.jsp?id=<%=id %>">
+  <input type="hidden" name="questtype" value="judge"/>
   修改选择题:
   <br><br>
   <%
   String sql="select * from xuanzeti where id="+id;
-  String zhuanye="";String xueke="";String timu="";String xuanxiangA="";String xuanxiangB="";String xuanxiangC="";String xuanxiangD="";String daan="";String nanduxishu="";
+  String zhuanye="";
+  String xueke="";
+  String timu="";
+  String xuanxiangA="";
+  String xuanxiangB="";
+  String xuanxiangC="";
+  String xuanxiangD="";
+  String daan="";
+  String nanduxishu="";
   ResultSet RS_result=connDbBean.executeQuery(sql);
   while(RS_result.next()){
-  zhuanye=RS_result.getString("zhuanye");xueke=RS_result.getString("xueke");timu=RS_result.getString("timu");xuanxiangA=RS_result.getString("xuanxiangA");xuanxiangB=RS_result.getString("xuanxiangB");xuanxiangC=RS_result.getString("xuanxiangC");xuanxiangD=RS_result.getString("xuanxiangD");daan=RS_result.getString("daan");nanduxishu=RS_result.getString("nanduxishu");
+  	zhuanye=RS_result.getString("zhuanye");
+  	xueke=RS_result.getString("xueke");
+  	timu=RS_result.getString("timu");
+  	xuanxiangA=RS_result.getString("xuanxiangA");
+  	xuanxiangB=RS_result.getString("xuanxiangB");
+  	xuanxiangC=RS_result.getString("xuanxiangC");
+  	xuanxiangD=RS_result.getString("xuanxiangD");
+  	daan=RS_result.getString("daan");
+  	nanduxishu=RS_result.getString("nanduxishu");
   }
    %>
    <table width="100%" border="1" align="center" cellpadding="3" cellspacing="1" bordercolor="#00FFFF" style="border-collapse:collapse">  
@@ -54,16 +70,30 @@ function check()
        <option value="<%= RS_result.getString("kechengmingcheng")%>" ><%=RS_result.getString("kechengmingcheng")%></option>
        <%}%>
      </select>
-     </td></tr><script language="javascript">document.form1.xueke.value='<%=xueke%>';</script><tr><td>题目：</td><td><textarea name='timu' cols='50' rows='5' id='timu'><%=timu%></textarea></td></tr><tr><td>选项A：</td><td><input name='xuanxiangA' type='text' id='xuanxiangA' size='50' value='<%=xuanxiangA%>' /></td></tr><tr><td>选项B：</td><td><input name='xuanxiangB' type='text' id='xuanxiangB' size='50' value='<%=xuanxiangB%>' /></td></tr><tr><td>选项C：</td><td><input name='xuanxiangC' type='text' id='xuanxiangC' size='50' value='<%=xuanxiangC%>' /></td></tr><tr><td>选项D：</td><td><input name='xuanxiangD' type='text' id='xuanxiangD' size='50' value='<%=xuanxiangD%>' /></td></tr><tr><td>答案：</td><td><select name='daan' id='daan'>
-       <option value="A">A</option>
-       <option value="B">B</option>
-       <option value="C">C</option>
-       <option value="D">D</option>
-     </select></td></tr><script language="javascript">document.form1.daan.value='<%=daan%>';</script><tr><td>难度系数：</td><td><select name='nanduxishu' id='nanduxishu'>
+     </td>
+     </tr>
+     <script language="javascript">document.form1.xueke.value='<%=xueke%>';</script>
+     <tr>
+	     <td>题目：</td>
+	     <td><textarea name='timu' cols='50' rows='5' id='timu'><%=timu%></textarea>
+	     </td>
+     </tr>
+     <tr>
+     <td>答案：</td>
+     <td>
+     <select name='daan' id='daan'>
+       <option value="1">正确</option>
+	   <option value="0">错误</option>
+     </select>
+     </td></tr><script language="javascript">document.form1.daan.value='<%=daan%>';</script>
+     <tr><td>难度系数：</td><td>
+     <select name='nanduxishu' id='nanduxishu'>
        <option value="难">难</option>
        <option value="中">中</option>
        <option value="易">易</option>
-     </select></td></tr><script language="javascript">document.form1.nanduxishu.value='<%=nanduxishu%>';</script>
+     </select></td>
+     </tr>
+     <script language="javascript">document.form1.nanduxishu.value='<%=nanduxishu%>';</script>
     <tr>
       <td>&nbsp;</td>
       <td><input type="submit" name="Submit" value="提交" onClick="return check();" />
