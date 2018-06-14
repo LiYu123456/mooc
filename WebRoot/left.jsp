@@ -63,6 +63,45 @@ border=0 align=right cellPadding=0 cellSpacing=0 class=leftframetable>
   <tr>
     <td height="5" background="images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
   </tr>
+  
+  <tr>
+    <td><TABLE class=leftframetable cellSpacing=0 cellPadding=0 width="97%" align=right 
+border=0>
+      <TBODY>
+        <TR>
+          <TD height="25" style="background:url(images/left_tt.gif) no-repeat">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <TD width="20"></TD>
+          <TD class=STYLE1 style="CURSOR: hand" onclick=showsubmenu(10); 
+    height=25>题型管理</TD>
+            </tr>
+          </table></TD>
+          </TR>
+        <TR>
+          <TD><TABLE id=submenu10 cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+                <TR>
+                  <TD width="2%">
+                  	<IMG src="images/closed.gif">
+                  </TD>
+                  <TD height=23>
+                  	<A href="./questionTypeManager_list.jsp?RegType=1" target=main>题型授权</A> 
+                  </TD>
+                </TR>
+              </TBODY>
+          </TABLE></TD>
+        </TR>
+      </TBODY>
+    </TABLE></td>
+  </tr>
+  <tr>
+    <td height="5" background="images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
+  </tr>
+  <tr>
+    <td height="5" background="images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
+  </tr>
+  
   <tr>
     <td><table class="leftframetable" cellspacing="0" cellpadding="0" width="97%" align="right" 
 border="0">
@@ -224,7 +263,8 @@ border=0>
 border=0>
       <TBODY>
         <TR>
-          <TD height="25" style="background:url(images/left_tt.gif) no-repeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <TD height="25" style="background:url(images/left_tt.gif) no-repeat">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <TD width="20"></TD>
           <TD class=STYLE1 style="CURSOR: hand" onclick=showsubmenu(6); 

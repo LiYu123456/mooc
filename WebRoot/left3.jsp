@@ -252,22 +252,37 @@ border=0>
         <TR>
           <TD><TABLE id=submenu8 cellSpacing=0 cellPadding=0 width="100%" border=0>
               <TBODY>
-                <TR>
-                  <TD width="2%"><IMG src="images/closed.gif"></TD>
-                  <TD height=23><A href="xuanzeti_add.jsp" target=main>选择题添加</A> </TD>
-                </TR>
-                <TR>
-                  <TD width="2%"><IMG src="images/closed.gif"></TD>
-                  <TD height=23><A href="panduan_add.jsp" target=main>判断题添加</A> </TD>
-                </TR>
-				<TR>
-                  <TD width="2%"><IMG src="images/closed.gif"></TD>
-                  <TD height=23><A href="xuanzeti_list.jsp" target=main>选择题查询</A> </TD>
-                </TR>
-				<TR>
-                  <TD width="2%"><IMG src="images/closed.gif"></TD>
-                  <TD height=23><A href="panduan_list.jsp" target=main>判断题查询</A> </TD>
-                </TR>
+                
+                <%
+                	String selecType=(String)request.getSession().getAttribute("selectType");
+                  	if(selecType!=null&&selecType.indexOf("choice")>=0){
+                  		
+                %>
+		                <TR>
+		                  <TD width="2%"><IMG src="images/closed.gif"></TD>
+		                  <TD height=23><A href="xuanzeti_add.jsp" target=main>选择题添加</A> </TD>
+		                </TR>
+		                
+						<TR>
+		                  <TD width="2%"><IMG src="images/closed.gif"></TD>
+		                  <TD height=23><A href="xuanzeti_list.jsp" target=main>选择题查询</A> </TD>
+		                </TR>
+                <%
+                  	}
+                  	if(selecType!=null&&selecType.indexOf("judge")>=0){
+                %>
+                		<TR>
+		                  <TD width="2%"><IMG src="images/closed.gif"></TD>
+		                  <TD height=23><A href="panduan_add.jsp" target=main>判断题添加</A> </TD>
+		                </TR>
+		                <TR>
+		                  <TD width="2%"><IMG src="images/closed.gif"></TD>
+		                  <TD height=23><A href="panduan_list.jsp" target=main>判断题查询</A> </TD>
+		                </TR>
+				<% 
+                  	}
+                  	if(selecType!=null&&!"".equals(selecType)){
+				%>
 				<TR>
                   <TD width="2%"><IMG src="images/closed.gif"></TD>
                   <TD height=23><A href="zidongzujuan_add.jsp" target=main>组卷添加</A> </TD>
@@ -276,6 +291,7 @@ border=0>
                   <TD width="2%"><IMG src="images/closed.gif"></TD>
                   <TD height=23><A href="zidongzujuan_list.jsp" target=main>组卷管理</A> </TD>
                 </TR>
+                <% }%>
               </TBODY>
           </TABLE></TD>
         </TR>

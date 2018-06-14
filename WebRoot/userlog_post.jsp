@@ -32,6 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  if(RS_result.next()){
  	 session.setAttribute("username",uid);
 	 session.setAttribute("cx",cx);
+	 session.setAttribute("selectType",RS_result.getString("selectQueType"));
 	 response.sendRedirect("index.jsp");	
  }
  RS_result.close();
